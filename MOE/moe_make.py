@@ -98,7 +98,8 @@ class SparseMOE(nn.Module):
                 # Update final output additively by indexing and adding
                 final_output[expert_mask] += weight_output.squeeze(1)
                 print(f"weight_output:{weight_output}")
-                print(f"weight_output.squeeze(-1):{weight_output.squeeze(1)}")
+                test = weight_output.squeeze(1)
+                print(f"weight_output.squeeze(-1):{test}")
                 print(f"final_output:{final_output}", final_output.size())
 
         return final_output
