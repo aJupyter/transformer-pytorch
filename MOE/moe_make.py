@@ -66,6 +66,7 @@ class SparseMOE(nn.Module):
 
     def forward(self, x):
         gating_output, indices = self.router(x)
+        print(f"x:\n {x}")
         print(f"gating output:\n{gating_output}", '\n' f"indices:\n{indices}")
         final_output = torch.zeros_like(x)
         print(f"final_output:\n {final_output}")
